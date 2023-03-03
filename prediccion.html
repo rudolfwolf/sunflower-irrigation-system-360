@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mi Girasol</title>
+	<link href="static/css/estilo1.css" rel="stylesheet" />
+	<link rel="icon" href="static/imagenes/sis_icono.png">
+
+</head>
+
+<header>
+	<nav>
+		<ul>
+			<li><a href="{{url_for('index')}}"><img src="static/imagenes/sis1.png" alt="sis360" class="logo" /></a></li>
+			<li><a href="{{url_for('index')}}">Inicio</a></li>
+			<li><a href="{{url_for('predict')}}">Mi Girasol</a></li>
+			<li><a href="{{url_for('recomendaciones')}}">Recomendaciones</a></li>
+			<li><a href="{{url_for('contacto')}}">Contacto</a></l>
+			<li><a href="{{url_for('acerca')}}">Acerca de </a></li>
+		</ul>
+	</nav>
+</header>
+
+<body>
+	<p>&emsp;</p>
+	<p>&emsp;</p>
+	<p>&emsp;</p>
+	<p>&emsp;</p>
+	<p>&emsp;</p>
+	<p>&emsp;</p>
+	
+	<center>
+		<form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+			<div>
+			  <input type="file" name="image" id="image-input" class="one-button">
+			</div>
+			<p>&emsp;</p>
+			<div>
+			  <img src="{{ image_url }}" id="image-preview" style="display: block; width: 200px;">
+			  <p>&emsp;</p>
+			</div>
+			<input type="submit" value="Predecir archivo" class="submit-button">
+		 </form>
+	</center>
+
+
+	<div>
+		<p>&emsp;</p>
+		<p align="center"><font face="Verdana,Geneva,sans-serif" font-weight= "bold" color="white" size="6px">Resultado de la predicción: {{ prediction }}</font></p>
+		<center>
+		<a href="{{url_for('recomendaciones')}}"><font face="Verdana,Geneva,sans-serif" color="white" size="6px">entra aquí para ver las recomendaciones en caso de plaga</a>
+		<p>&emsp;</p>
+		<p>&emsp;</p>
+		<p>&emsp;</p>
+		<p>&emsp;</p>
+		</center>
+	</div>
+
+	<footer>
+		<pre>					Sunflower Irrigation System 360 
+Realizado por: Diego Rodolfo Vargas Vega, Kevin Leopoldo Navarro Mercado, Andrés Humberto Martínez Escobedo</pre>
+	</footer>
+
+</body>
+
+</html>
